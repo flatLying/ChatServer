@@ -7,13 +7,17 @@
         insert into users (phone, nick_name, password, avatar, create_time, update_time, level)
         VALUES (#{phone},#{nickName},#{password},#{avatar},#{createTime},#{updateTime},#{level})
     </insert>
-    <select id="getUserByPhone" resultType="hit.dreamer.chatserver.entries.User">
+    <select id="getUserByPhone" resultType="hit.dreamer.chatserver.pojo.User">
         select id,phone,  password,nick_name, avatar, create_time,
                 update_time, level  from users where phone=#{phone}
     </select>
-    <select id="getUserByPhoneAndPassword" resultType="hit.dreamer.chatserver.entries.User">
+    <select id="getUserByPhoneAndPassword" resultType="hit.dreamer.chatserver.pojo.User">
         select id,phone,  password,nick_name, avatar, create_time,
                update_time, level  from users where phone=#{phone} and password=#{password}
+    </select>
+    <select id="getUserById" resultType="hit.dreamer.chatserver.pojo.User">
+        select id,phone,  password,nick_name, avatar, create_time,
+               update_time, level  from users where id=#{id}
     </select>
 
 </mapper>

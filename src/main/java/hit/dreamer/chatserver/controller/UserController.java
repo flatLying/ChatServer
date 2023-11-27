@@ -2,7 +2,7 @@ package hit.dreamer.chatserver.controller;
 
 import hit.dreamer.chatserver.dto.LoginFormDTO;
 import hit.dreamer.chatserver.dto.Result;
-import hit.dreamer.chatserver.entries.User;
+import hit.dreamer.chatserver.pojo.User;
 import hit.dreamer.chatserver.service.UserService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;

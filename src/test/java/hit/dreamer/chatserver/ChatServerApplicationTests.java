@@ -1,6 +1,6 @@
 package hit.dreamer.chatserver;
 
-import hit.dreamer.chatserver.entries.User;
+import hit.dreamer.chatserver.pojo.User;
 import hit.dreamer.chatserver.mapper.UserMapper;
 import hit.dreamer.chatserver.service.UserService;
 import jakarta.annotation.Resource;

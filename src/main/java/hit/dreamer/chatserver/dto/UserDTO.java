@@ -1,6 +1,6 @@
 package hit.dreamer.chatserver.dto;
 
-import hit.dreamer.chatserver.entries.User;
+import hit.dreamer.chatserver.pojo.User;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

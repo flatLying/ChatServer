@@ -1,4 +1,4 @@
-package hit.dreamer.chatserver.entries;
+package hit.dreamer.chatserver.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

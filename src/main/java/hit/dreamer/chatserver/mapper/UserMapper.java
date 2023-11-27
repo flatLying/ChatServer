@@ -1,6 +1,6 @@
 package hit.dreamer.chatserver.mapper;
 
-import hit.dreamer.chatserver.entries.User;
+import hit.dreamer.chatserver.pojo.User;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

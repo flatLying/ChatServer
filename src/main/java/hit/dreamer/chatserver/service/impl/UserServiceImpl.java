@@ -5,7 +5,7 @@ import cn.hutool.core.lang.UUID;
 import hit.dreamer.chatserver.dto.LoginFormDTO;
 import hit.dreamer.chatserver.dto.Result;
 import hit.dreamer.chatserver.dto.UserDTO;
-import hit.dreamer.chatserver.entries.User;
+import hit.dreamer.chatserver.pojo.User;
 import hit.dreamer.chatserver.mapper.UserMapper;
 import hit.dreamer.chatserver.service.UserService;
 import hit.dreamer.chatserver.utils.CodeUtils;
