@@ -3,7 +3,6 @@ package hit.dreamer.chatserver.interceptor;
 import hit.dreamer.chatserver.utils.RedisConstants;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.servlet.HandlerInterceptor;
 

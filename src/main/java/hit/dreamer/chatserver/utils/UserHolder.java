@@ -1,6 +1,6 @@
 package hit.dreamer.chatserver.utils;
 
-import hit.dreamer.chatserver.pojo.UserDTO;
+import hit.dreamer.chatserver.dto.UserDTO;
 
 import java.util.Map;
 

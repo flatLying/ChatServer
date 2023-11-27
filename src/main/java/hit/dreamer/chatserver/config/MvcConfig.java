@@ -21,6 +21,6 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addInterceptor(new FreshStatusInterceptor(stringRedisTemplate))
                 .addPathPatterns("/**");
         registry.addInterceptor(new LoginStatusInterceptor(stringRedisTemplate))
-                .excludePathPatterns("");
+                .excludePathPatterns("/user/code","/user/login","/user/login2");
     }
 }

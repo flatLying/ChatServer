@@ -1,7 +1,8 @@
 package hit.dreamer.chatserver.interceptor;
 
 import com.fasterxml.jackson.databind.util.BeanUtil;
-import hit.dreamer.chatserver.pojo.UserDTO;
+
+import hit.dreamer.chatserver.dto.UserDTO;
 import hit.dreamer.chatserver.utils.RedisConstants;
 import hit.dreamer.chatserver.utils.UserHolder;
 import jakarta.servlet.http.HttpServletRequest;
