@@ -2,6 +2,9 @@ package hit.dreamer.chatserver.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.lang.UUID;
+import com.apistd.uni.UniException;
+import com.apistd.uni.UniResponse;
+import com.apistd.uni.sms.UniMessage;
 import hit.dreamer.chatserver.dto.LoginFormDTO;
 import hit.dreamer.chatserver.dto.Result;
 import hit.dreamer.chatserver.dto.UserDTO;
@@ -11,8 +14,8 @@ import hit.dreamer.chatserver.service.UserService;
 import hit.dreamer.chatserver.utils.CodeUtils;
 import hit.dreamer.chatserver.utils.RedisConstants;
 import hit.dreamer.chatserver.utils.RegexUtils;
+import io.lettuce.core.pubsub.PubSubOutput;
 import jakarta.annotation.Resource;
-import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
@@ -20,6 +23,8 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+
+import static io.lettuce.core.pubsub.PubSubOutput.Type.message;
 
 
 @Slf4j
@@ -43,9 +48,20 @@ public class UserServiceImpl implements UserService {
 		}
 		//2.生成验证码
 		String code = CodeUtils.generatorCode(phone);
-		//3.保存到redis
-		stringRedisTemplate.opsForValue().set(RedisConstants.LOGIN_CODE_KEY+phone,code,RedisConstants.LOGIN_CODE_TTL,TimeUnit.MINUTES);
-		log.debug("发送验证码为："+code);
+		//3.获取短信验证码平台
+		UniMessage message = CodeUtils.codeApi(phone,code);
+		// 发送短信
+		try {
+			UniResponse res = message.send();
+			log.debug("验证码发送情况:"+res.toString());
+			//3.保存到redis
+			stringRedisTemplate.opsForValue().set(RedisConstants.LOGIN_CODE_KEY+phone,code,RedisConstants.LOGIN_CODE_TTL,TimeUnit.MINUTES);
+			log.debug("发送验证码为："+code);
+		} catch (UniException e) {
+			log.debug("Error: " + e);
+			log.debug("RequestId: " + e.requestId);
+			return Result.fail("验证码发送失败！！！！");
+		}
 		return Result.ok();
 	}
 	

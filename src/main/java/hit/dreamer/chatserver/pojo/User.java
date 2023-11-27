@@ -1,9 +1,7 @@
 package hit.dreamer.chatserver.pojo;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.security.Principal;
 import java.time.LocalDateTime;
 
 

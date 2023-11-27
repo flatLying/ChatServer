@@ -3,8 +3,6 @@ package hit.dreamer.chatserver.service;
 import hit.dreamer.chatserver.dto.LoginFormDTO;
 import hit.dreamer.chatserver.dto.Result;
 import hit.dreamer.chatserver.pojo.User;
-import jakarta.servlet.http.HttpSession;
-import org.springframework.stereotype.Service;
 
 public interface UserService {
 	/**

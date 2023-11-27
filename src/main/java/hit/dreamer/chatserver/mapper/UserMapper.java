@@ -18,4 +18,6 @@ public interface UserMapper {
 	 * */
 	public User getUserByPhoneAndPassword(String phone,String password);
 	
+	public User getUserById(Long id);
+	
 }
