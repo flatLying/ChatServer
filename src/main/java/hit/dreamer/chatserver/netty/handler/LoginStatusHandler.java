@@ -3,15 +3,13 @@ package hit.dreamer.chatserver.netty.handler;
 import hit.dreamer.chatserver.utils.ChannelHolder;
 import hit.dreamer.chatserver.utils.RedisConstants;
 import io.netty.buffer.ByteBuf;
-import io.netty.channel.ChannelHandler;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
-import io.netty.channel.SimpleChannelInboundHandler;
-import io.netty.handler.codec.http.FullHttpRequest;
-import io.netty.handler.codec.http.HttpRequest;
+import io.netty.buffer.Unpooled;
+import io.netty.channel.*;
+import io.netty.handler.codec.http.*;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.util.Attribute;
 import io.netty.util.AttributeKey;
+import io.netty.util.CharsetUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -32,7 +30,7 @@ public class LoginStatusHandler extends ChannelInboundHandlerAdapter {
             FullHttpRequest request = (FullHttpRequest) msg;
             String authorization = request.headers().get("authorization");
             Map<Object, Object> userDTOMap = stringRedisTemplate.opsForHash().entries(RedisConstants.LOGIN_USER_KEY + authorization);
-            if (userDTOMap.isEmpty()){
+            if (!userDTOMap.isEmpty()){
                 log.debug("验证通过");
                 // 在channel的本地保存用户的id信息
                 ChannelHolder.setChannelAttribute(ctx.channel(), "authorization", authorization);
@@ -41,7 +39,8 @@ public class LoginStatusHandler extends ChannelInboundHandlerAdapter {
             }
             else {
                 log.debug("验证失败");
-                ctx.channel().close();
+                send(ctx,"登录失败！",HttpResponseStatus.UNAUTHORIZED);
+//                ctx.channel().close();
             }
         }
         else {
@@ -49,7 +48,16 @@ public class LoginStatusHandler extends ChannelInboundHandlerAdapter {
             ctx.channel().close();
         }
     }
-
+    //发送http请求，https://juejin.cn/post/7143608389023563806
+    private void send(ChannelHandlerContext ctx, String context,
+                      HttpResponseStatus status) {
+        FullHttpResponse response = new DefaultFullHttpResponse(
+                HttpVersion.HTTP_1_1,status,
+                Unpooled.copiedBuffer(context, CharsetUtil.UTF_8)
+        );
+        response.headers().set(HttpHeaderNames.CONTENT_TYPE,"text/plain;charset=UTF-8");
+        ctx.writeAndFlush(response).addListener(ChannelFutureListener.CLOSE);
+    }
 
 //    @Override
 //    protected void channelRead0(ChannelHandlerContext channelHandlerContext, Object msg) throws Exception {
