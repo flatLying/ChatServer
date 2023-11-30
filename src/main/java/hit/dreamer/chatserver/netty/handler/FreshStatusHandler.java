@@ -26,8 +26,9 @@ public class FreshStatusHandler extends SimpleChannelInboundHandler<TextWebSocke
 
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, TextWebSocketFrame textWebSocketFrame) throws Exception {
-        log.debug("用户{}刷新成功", ChannelHolder.getChannelAttribute(channelHandlerContext.channel(), "authorization"));
+        String authorization = (String) ChannelHolder.getChannelAttribute(channelHandlerContext.channel(), "authorization");
         //在redis中刷新有效期
+        stringRedisTemplate.expire(RedisConstants.LOGIN_USER_KEY + authorization, RedisConstants.LOGIN_USER_TTL, TimeUnit.SECONDS);
         channelHandlerContext.writeAndFlush(new TextWebSocketFrame(textWebSocketFrame.text() + "--back message"));
     }
 }

@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36a5fde1-ee0e-4b17-9fc8-f08987248c62" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/handler/HandlerInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/handler/LoginStatusHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/ChatServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/ChatServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/ChatServerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/ChatServerApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/dto/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/dto/Result.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/pojo/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/pojo/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/utils/CodeUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/utils/CodeUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/utils/RedisConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/utils/RedisConstants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/handler/FreshStatusHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/handler/FreshStatusHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/handler/LoginStatusHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/handler/LoginStatusHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,34 +50,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/MyDataSpace/Tencent/QQ/1735175988/FileRecv/ChatServer&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;ec0dd8b6c992be8c9481f27186b8f0fa&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/MyDataSpace/Tencent/QQ/1735175988/FileRecv/ChatServer",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
+    "spring.configuration.checksum": "ec0dd8b6c992be8c9481f27186b8f0fa",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;,
-      &quot;redis&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "redis",
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -116,7 +107,8 @@
       <workItem from="1701155351235" duration="8366000" />
       <workItem from="1701173437206" duration="8258000" />
       <workItem from="1701220566288" duration="5812000" />
-      <workItem from="1701245963564" duration="3211000" />
+      <workItem from="1701245963564" duration="6488000" />
+      <workItem from="1701327055898" duration="2832000" />
     </task>
     <servers />
   </component>
