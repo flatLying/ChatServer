@@ -102,7 +102,11 @@ public class UserServiceImpl implements UserService {
 			return Result.ok(token);
 		}
 		else {
-			return Result.fail("用户已经登录");
+			Result result = new Result();
+			result.setData(userToken);
+			result.setSuccess(false);
+			result.setErrorMsg("用户已经登录");
+			return result;
 		}
 	}
 	
