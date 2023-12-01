@@ -82,20 +82,28 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	private Result userToRedis(User user) {
-		//5.随机生成token
-		String token = UUID.randomUUID().toString(true);
-		//6.生成userdto对象
-		UserDTO userDTO = new UserDTO(user);
-		//7.保存到redis
-		String key = RedisConstants.LOGIN_USER_KEY + token;
-		Map<String, Object> userMap = BeanUtil.beanToMap(userDTO);
-		userMap.forEach((keys, value) -> {
-			if (null != value) userMap.put(keys, String.valueOf(value));
-		});
-		stringRedisTemplate.opsForHash().putAll(key, userMap);
-		//设置有效期
-		stringRedisTemplate.expire(key,RedisConstants.LOGIN_USER_TTL,TimeUnit.SECONDS);
-		return Result.ok(token);
+		String userToken = stringRedisTemplate.opsForValue().get(RedisConstants.LOGIN_USER_KEY + user.getId());
+		if (userToken == null){
+			//5.随机生成token
+			String token = UUID.randomUUID().toString(true);
+			//6.生成userdto对象
+			UserDTO userDTO = new UserDTO(user);
+			//7.保存到redis
+			String key = RedisConstants.LOGIN_USER_KEY + token;
+			Map<String, Object> userMap = BeanUtil.beanToMap(userDTO);
+			userMap.forEach((keys, value) -> {
+				if (null != value) userMap.put(keys, String.valueOf(value));
+			});
+			stringRedisTemplate.opsForHash().putAll(key, userMap);
+			stringRedisTemplate.opsForValue().set(RedisConstants.LOGIN_USER_KEY + user.getId(), token);
+			//设置有效期
+			stringRedisTemplate.expire(key,RedisConstants.LOGIN_USER_TTL,TimeUnit.SECONDS);
+			stringRedisTemplate.expire(RedisConstants.LOGIN_USER_KEY + user.getId(), RedisConstants.LOGIN_USER_TTL, TimeUnit.SECONDS);
+			return Result.ok(token);
+		}
+		else {
+			return Result.fail("用户已经登录");
+		}
 	}
 	
 	@Override

@@ -9,6 +9,13 @@ spring:
     password: Hit_dreamer123_redis_complex_upup
     username: root
     url: jdbc:mysql://124.71.32.241:3306/chatserver
+  rabbitmq:
+    host: 124.71.32.241
+    port: 5672
+    stream:
+      virtual-host: /ChatServer
+      username: adminhit
+      password: Hit_dreamer123_rabbitmq_complex_upup
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
