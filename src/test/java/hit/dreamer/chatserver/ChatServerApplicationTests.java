@@ -10,6 +10,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.function.Consumer;
 
 @SpringBootTest
 class ChatServerApplicationTests {
@@ -36,21 +38,18 @@ class ChatServerApplicationTests {
         User user = userMapper.getUserByPhone(phone);
         System.out.println(user);
     }
+    
 
     @Test
-    void testRabbitMQConnection(){
-        ConnectionFactory connectionFactory = new ConnectionFactory();
-        connectionFactory.setHost("124.71.32.241");
-        connectionFactory.setPort(5672);
-        connectionFactory.setUsername("adminhit");
-        connectionFactory.setPassword("Hit_dreamer123_rabbitmq_complex_upup");
-        try {
-            Connection connection = connectionFactory.newConnection();
-            System.out.println("Successfully connected to RabbitMQ server.");
-            connection.close();
-        } catch (Exception e) {
-            System.err.println("Connection failed: " + e.getMessage());
-        }
+    void testGetUsersByRoomId(){
+        String roomId = "1";
+        List<User> usersByRoomId = userMapper.getUsersByRoomId(roomId);
+        usersByRoomId.forEach(new Consumer<User>() {
+            @Override
+            public void accept(User user) {
+                System.out.println(user.toString());
+            }
+        });
     }
 
 
