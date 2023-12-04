@@ -1,7 +1,9 @@
 package hit.dreamer.chatserver;
 
-import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.ConnectionFactory;
+import hit.dreamer.chatserver.mapper.HistoryMessageMapper;
+import hit.dreamer.chatserver.mapper.RoomMapper;
+import hit.dreamer.chatserver.pojo.HistoryMessage;
+import hit.dreamer.chatserver.pojo.Room;
 import hit.dreamer.chatserver.pojo.User;
 import hit.dreamer.chatserver.mapper.UserMapper;
 import hit.dreamer.chatserver.service.UserService;
@@ -18,17 +20,23 @@ class ChatServerApplicationTests {
     private UserService userService;
     @Resource
     private UserMapper userMapper;
+    @Resource
+    private RoomMapper roomMapper;
+    @Resource
+    private HistoryMessageMapper historyMessageMapper;
     @Test
-    void testInsert() {
-        User user=new User();
-        user.setAvatar("1.jpg");
-        user.setLevel((short) 1);
-        user.setPassword("123456");
-        user.setPhone("18804618031");
-        user.setNickName("彼岸星光");
-        user.setCreateTime(LocalDateTime.now());
-        user.setUpdateTime(LocalDateTime.now());
-        userService.insert(user);
+    void testInsertUser() {
+        for (int i = 0; i < 10; i++) {
+            User user=new User();
+            user.setAvatar(i+".jpg");
+            user.setLevel((short) 1);
+            user.setPassword("123456");
+            user.setPhone("1393838383"+i);
+            user.setNickName("测试机器人"+i);
+            user.setCreateTime(LocalDateTime.now());
+            user.setUpdateTime(LocalDateTime.now());
+            userMapper.insert(user);
+        }
     }
     @Test
     void testGetByPhone(){
@@ -36,22 +44,23 @@ class ChatServerApplicationTests {
         User user = userMapper.getUserByPhone(phone);
         System.out.println(user);
     }
-
     @Test
-    void testRabbitMQConnection(){
-        ConnectionFactory connectionFactory = new ConnectionFactory();
-        connectionFactory.setHost("124.71.32.241");
-        connectionFactory.setPort(5672);
-        connectionFactory.setUsername("adminhit");
-        connectionFactory.setPassword("Hit_dreamer123_rabbitmq_complex_upup");
-        try {
-            Connection connection = connectionFactory.newConnection();
-            System.out.println("Successfully connected to RabbitMQ server.");
-            connection.close();
-        } catch (Exception e) {
-            System.err.println("Connection failed: " + e.getMessage());
+    void testInsertRoom(){
+        for (int i=0;i<=5;++i){
+            String name="TestRoom_"+i;
+            String avatar=i+".jpg";
+            Room room=new Room();
+            room.setRoomName(name);
+            room.setAvatar(avatar);
+            room.setCreateTime(LocalDateTime.now());
+            room.setUpdateTime(LocalDateTime.now());
+            roomMapper.insert(room);
         }
     }
-
-
+    @Test
+    void testHistoryMessageInsert(){
+        HistoryMessage historyMessage1=new HistoryMessage();
+        historyMessage1.setRoomId(1L);
+        historyMessage1.setSenderId(1L);
+    }
 }

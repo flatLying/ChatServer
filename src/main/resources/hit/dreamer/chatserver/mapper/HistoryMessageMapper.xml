@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hit.dreamer.chatserver.mapper.HistoryMessageMapper">
+    <insert id="insert">
+        insert into history_message (sender_id, room_id, message)
+        VALUES (#{senderId},#{roomId},#{message})
+    </insert>
+    <delete id="deleteByRoomId">
+        delete from history_message where room_id=#{roomId}
+    </delete>
+    <select id="getHistoryMessageBySender" resultType="hit.dreamer.chatserver.pojo.HistoryMessage">
+        select id,sender_id,room_id,message from history_message where sender_id = #{senderId}
+    </select>
+    <select id="getHistoryMessageByRoom" resultType="hit.dreamer.chatserver.pojo.HistoryMessage">
+        select id,sender_id,room_id,message from history_message where sender_id = #{roomId}
+    </select>
+    <select id="getHistoryMessageById" resultType="hit.dreamer.chatserver.pojo.HistoryMessage">
+        select id,sender_id,room_id,message from history_message where id = #{id}
+    </select>
+</mapper>

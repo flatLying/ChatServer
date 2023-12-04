@@ -1,11 +1,12 @@
 spring:
+  main:
+    lazy-initialization: true
   data:
     redis:
       host: 124.71.32.241
       port: 6379
       password: Hit_dreamer123_redis_complex_upup
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
     password: Hit_dreamer123_redis_complex_upup
     username: root
     url: jdbc:mysql://124.71.32.241:3306/chatserver
@@ -21,9 +22,7 @@ mybatis:
 logging:
   level:
     hit.dreamer: debug
-
 netty:
   port: 8081
-
 server:
   port: 8080
