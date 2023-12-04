@@ -12,10 +12,9 @@ spring:
   rabbitmq:
     host: 124.71.32.241
     port: 5672
-    stream:
-      virtual-host: /ChatServer
-      username: adminhit
-      password: Hit_dreamer123_rabbitmq_complex_upup
+    username: adminhit
+    password: Hit_dreamer123_rabbitmq_complex_upup
+    virtual-host: /ChatServer
 mybatis:
   configuration:
     map-underscore-to-camel-case: true

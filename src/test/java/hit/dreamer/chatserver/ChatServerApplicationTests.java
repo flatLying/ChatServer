@@ -1,5 +1,7 @@
 package hit.dreamer.chatserver;
 
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
 import hit.dreamer.chatserver.pojo.User;
 import hit.dreamer.chatserver.mapper.UserMapper;
 import hit.dreamer.chatserver.service.UserService;
@@ -34,5 +36,22 @@ class ChatServerApplicationTests {
         User user = userMapper.getUserByPhone(phone);
         System.out.println(user);
     }
+
+    @Test
+    void testRabbitMQConnection(){
+        ConnectionFactory connectionFactory = new ConnectionFactory();
+        connectionFactory.setHost("124.71.32.241");
+        connectionFactory.setPort(5672);
+        connectionFactory.setUsername("adminhit");
+        connectionFactory.setPassword("Hit_dreamer123_rabbitmq_complex_upup");
+        try {
+            Connection connection = connectionFactory.newConnection();
+            System.out.println("Successfully connected to RabbitMQ server.");
+            connection.close();
+        } catch (Exception e) {
+            System.err.println("Connection failed: " + e.getMessage());
+        }
+    }
+
 
 }
