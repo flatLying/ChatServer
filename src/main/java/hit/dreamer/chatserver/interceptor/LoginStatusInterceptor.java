@@ -1,17 +1,12 @@
 package hit.dreamer.chatserver.interceptor;
-
-import com.fasterxml.jackson.databind.util.BeanUtil;
-
 import hit.dreamer.chatserver.dto.UserDTO;
 import hit.dreamer.chatserver.utils.RedisConstants;
 import hit.dreamer.chatserver.utils.UserHolder;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.beans.BeanUtils;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.servlet.HandlerInterceptor;
-import org.springframework.web.servlet.ModelAndView;
-
+import cn.hutool.core.bean.BeanUtil;
 import java.util.Map;
 
 public class LoginStatusInterceptor implements HandlerInterceptor {
@@ -39,8 +34,7 @@ public class LoginStatusInterceptor implements HandlerInterceptor {
             response.setStatus(401);
             return false;
         }
-        UserDTO userDTO= new UserDTO();
-        BeanUtils.copyProperties(userDTOMap, userDTO);
+        UserDTO userDTO = BeanUtil.fillBeanWithMap(userDTOMap, new UserDTO(), false);
         UserHolder.saveUserDTO(userDTO);
         return true;
     }

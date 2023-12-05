@@ -7,5 +7,10 @@
         insert into rooms (name, avatar, create_time, update_time)
         VALUES (#{roomName},#{avatar},#{createTime},#{updateTime})
     </insert>
-
+    <select id="queryRoomIdByUserId" resultType="java.lang.Long">
+        select user_room.room_id from user_room where user_room.user_id=#{id}
+    </select>
+    <select id="queryRoomInfoById" resultType="hit.dreamer.chatserver.pojo.Room">
+        select rooms.id,rooms.name,rooms.avatar,rooms.create_time,rooms.update_time from rooms where id = #{id}
+    </select>
 </mapper>

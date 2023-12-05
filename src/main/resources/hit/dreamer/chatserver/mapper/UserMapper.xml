@@ -19,5 +19,9 @@
         select id,phone,  password,nick_name, avatar, create_time,
                update_time, level  from users where id=#{id}
     </select>
+    <select id="getUserByRoomId" resultType="hit.dreamer.chatserver.pojo.User">
+        select id,nick_name,avatar,password,create_time,update_time,level from users where id in (select user_id from user_room
+                where room_id = #{id} )
+    </select>
 
 </mapper>

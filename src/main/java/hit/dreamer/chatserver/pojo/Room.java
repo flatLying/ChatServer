@@ -16,7 +16,7 @@ public class Room {
 	/**
 	 * 群聊名称
 	 */
-	private String roomName;
+	private String name;
 	
 	/**
 	 * 用户头像

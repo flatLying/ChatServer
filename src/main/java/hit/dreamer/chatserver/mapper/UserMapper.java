@@ -3,6 +3,8 @@ package hit.dreamer.chatserver.mapper;
 import hit.dreamer.chatserver.pojo.User;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface UserMapper {
 	/**
@@ -19,5 +21,9 @@ public interface UserMapper {
 	public User getUserByPhoneAndPassword(String phone,String password);
 	
 	public User getUserById(Long id);
+	/**
+	 * 根据roomid查询用户信息
+	 * */
+	public List<User> getUserByRoomId(Long id);
 	
 }
