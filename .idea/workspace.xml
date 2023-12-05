@@ -5,12 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36a5fde1-ee0e-4b17-9fc8-f08987248c62" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/sqls/history_message.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/mapper/HistoryMessageMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/mapper/RoomMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/pojo/HistoryMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/pojo/Room.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hit/dreamer/chatserver/mapper/HistoryMessageMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hit/dreamer/chatserver/mapper/RoomMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/NettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/NettyServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/database/MySqlHistoryMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/database/MySqlHistoryMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/database/RedisOffLineMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/database/RedisOffLineMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/handler/HandlerInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/handler/HandlerInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/handler/MessageTransferHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/handler/MessageTransferHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/utils/RedisConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/utils/RedisConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/hit/dreamer/chatserver/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hit/dreamer/chatserver/mapper/UserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/hit/dreamer/chatserver/ChatServerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hit/dreamer/chatserver/ChatServerApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/ChatServerApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/config/CorsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/config/MvcConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/dto/LoginFormDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/dto/Result.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/dto/UserDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/interceptor/FreshStatusInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/interceptor/LoginStatusInterceptor.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/mapper/UserMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/netty/NettyServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/netty/handler/FreshStatusHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/netty/handler/HandlerInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/netty/handler/LoginStatusHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/netty/message/ChatMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/pojo/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/service/impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/utils/ChannelHolder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/utils/CodeUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/utils/RedisConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/utils/RegexPatterns.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/utils/RegexUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/utils/UserHolder.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/hit/dreamer/chatserver/ChatServerApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/hit/dreamer/chatserver/ChatServerApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +123,7 @@
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
-  <component name="RunManager" selected="JUnit.ChatServerApplicationTests.testGetUsersByRoomId">
+  <component name="RunManager" selected="Spring Boot.ChatServerApplication">
     <configuration name="ChatServerApplicationTests.testGetUsersByRoomId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ChatServer" />
       <extension name="coverage">
@@ -157,7 +196,7 @@
       <workItem from="1701583311662" duration="12819000" />
       <workItem from="1701604948066" duration="127000" />
       <workItem from="1701605081731" duration="2895000" />
-      <workItem from="1701676105923" duration="1584000" />
+      <workItem from="1701676105923" duration="9015000" />
     </task>
     <servers />
   </component>

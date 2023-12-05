@@ -1,5 +1,6 @@
 package hit.dreamer.chatserver.netty;
 
+import hit.dreamer.chatserver.mapper.UserMapper;
 import hit.dreamer.chatserver.netty.handler.HandlerInitializer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
@@ -34,11 +35,14 @@ public class NettyServer implements CommandLineRunner {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
+    @Autowired
+    private UserMapper userMapper;
+
     public void start() throws InterruptedException {
         ServerBootstrap serverBootstrap = new ServerBootstrap();
         Channel channel = serverBootstrap.group(this.bossGroup, this.workerGroup)
                 .channel(NioServerSocketChannel.class)
-                .childHandler(new HandlerInitializer(stringRedisTemplate, rabbitTemplate))
+                .childHandler(new HandlerInitializer(stringRedisTemplate, rabbitTemplate, userMapper))
                 .bind(this.port).sync().channel();
         channel.closeFuture().sync();
 
