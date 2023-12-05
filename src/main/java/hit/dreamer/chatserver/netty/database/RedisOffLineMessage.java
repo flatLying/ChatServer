@@ -24,15 +24,14 @@ public class RedisOffLineMessage {
     private ObjectMapper objectMapper = new ObjectMapper();
 
     @RabbitListener(bindings = @QueueBinding(
-            value = @Queue(name = "direct.queue1", durable = "true"),
-            exchange = @Exchange(name = "OffLineMessage", type = ExchangeTypes.DIRECT),
+            value = @Queue(name = "directmessage.queue1", durable = "true"),
+            exchange = @Exchange(name = "Message", type = ExchangeTypes.DIRECT),
             key = {"offlineMessage"}
     ))
-    public void saveOffLineMessage(Map<String, Object> message) throws JsonProcessingException {
-        Map<String, Object> headers = (Map<String, Object>) message.get("headers");
-        String userId = (String) headers.get("receiveId");
-        stringRedisTemplate.opsForList().rightPush(RedisConstants.OFFLINE_USER_MESSAGE + userId, objectMapper.writeValueAsString(message));
-        log.debug("redis 缓存offline:{}", message);
-        return;
+    public void saveOffLineMessage(SendMessage message) throws JsonProcessingException {
+        log.debug("离线消息收到啦。。。");
+        Long receiverId = message.getReceiverId();
+        stringRedisTemplate.opsForList().rightPush(RedisConstants.OFFLINE_USER_MESSAGE + receiverId, objectMapper.writeValueAsString(message));
+        log.debug("redis 缓存offline:{}", message.toString());
     }
 }

@@ -2,6 +2,8 @@ package hit.dreamer.chatserver.pojo;
 
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 @Data
 public class HistoryMessage {
 	/**
@@ -20,4 +22,8 @@ public class HistoryMessage {
 	 * 消息
 	 */
 	private String message;
+	/**
+	 * 消息时间
+	 */
+	private LocalDateTime sendTime;
 }

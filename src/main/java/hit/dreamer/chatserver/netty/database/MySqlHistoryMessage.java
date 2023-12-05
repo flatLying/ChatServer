@@ -26,22 +26,20 @@ public class MySqlHistoryMessage {
     private ObjectMapper objectMapper = new ObjectMapper();
 
     @RabbitListener(bindings = @QueueBinding(
-            value = @Queue(name = "direct.queue2", durable = "true"),
-            exchange = @Exchange(name = "HistoryMessage", type = ExchangeTypes.DIRECT),
+            value = @Queue(name = "directmessage.queue2", durable = "true"),
+            exchange = @Exchange(name = "Message", type = ExchangeTypes.DIRECT),
             key = {"historyMessage"}
     ))
-    public void saveHistoryMessage(Map<String, Object> message) throws JsonProcessingException {
-        Map<String, Object> headers = (Map<String, Object>) message.get("headers");
-        String senderId = (String) headers.get("senderId");
-        SendMessage sendMessage = (SendMessage) message.get("content");
-        String roomId = sendMessage.getRoomId();
-
+    public void saveHistoryMessage(SendMessage message) throws JsonProcessingException {
+        log.debug("历史消息收到啦。。。。。。");
+        Long senderId = message.getSenderId();
+        Long roomId = message.getRoomId();
         HistoryMessage historyMessage = new HistoryMessage();
-        historyMessage.setRoomId(Long.valueOf(roomId));
-        historyMessage.setSenderId(Long.valueOf(senderId));
-        historyMessage.setMessage(objectMapper.writeValueAsString(sendMessage));
+        historyMessage.setRoomId(roomId);
+        historyMessage.setSenderId(senderId);
+        historyMessage.setMessage(objectMapper.writeValueAsString(message));
 
         historyMessageMapper.insert(historyMessage);
-        log.debug("mysql 历史消息：{}", sendMessage);
+        log.debug("mysql 历史消息：{}", historyMessage.toString());
     }
 }

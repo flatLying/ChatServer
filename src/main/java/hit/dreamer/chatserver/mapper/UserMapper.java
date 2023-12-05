@@ -20,8 +20,11 @@ public interface UserMapper {
 	 * */
 	public User getUserByPhoneAndPassword(String phone,String password);
 
-	public List<User> getUsersByRoomId(String roomId);
 	
 	public User getUserById(Long id);
+	/**
+	 * 根据roomid查询用户信息
+	 * */
+	public List<User> getUserByRoomId(Long id);
 	
 }

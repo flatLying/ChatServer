@@ -1,6 +1,4 @@
 spring:
-  main:
-    lazy-initialization: true
   data:
     redis:
       host: 124.71.32.241

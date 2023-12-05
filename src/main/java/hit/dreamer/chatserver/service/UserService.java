@@ -15,4 +15,6 @@ public interface UserService {
 	Result loginByPassword(LoginFormDTO loginForm);
 	
 	Result loginByCode(LoginFormDTO loginForm);
+	
+	public boolean userLogin(User user);
 }

@@ -14,7 +14,6 @@ import hit.dreamer.chatserver.service.UserService;
 import hit.dreamer.chatserver.utils.CodeUtils;
 import hit.dreamer.chatserver.utils.RedisConstants;
 import hit.dreamer.chatserver.utils.RegexUtils;
-import io.lettuce.core.pubsub.PubSubOutput;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -132,6 +131,13 @@ public class UserServiceImpl implements UserService {
 		//5.随机生成token
 		return userToRedis(user);
 	}
+	//判断用户是否已经登录
+	@Override
+	public boolean userLogin(User user) {
+		String userToken = stringRedisTemplate.opsForValue().get(RedisConstants.LOGIN_USER_KEY + user.getId());
+		return userToken!=null;
+	}
+	
 	//根据手机号创建新用户
 	private User createUserByPhone(String phone){
 		User user=new User();
