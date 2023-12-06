@@ -4,31 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36a5fde1-ee0e-4b17-9fc8-f08987248c62" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/controller/RoomController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/dto/RoomDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/dto/SendUserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/service/RoomService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/service/impl/RoomServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/interceptor/LoginStatusInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/interceptor/LoginStatusInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/mapper/RoomMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/mapper/RoomMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/database/MySqlHistoryMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/database/MySqlHistoryMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/database/RedisOffLineMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/database/RedisOffLineMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/handler/MessageTransferHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/handler/MessageTransferHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/message/SendMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/message/SendMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/pojo/HistoryMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/pojo/HistoryMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/pojo/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/pojo/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hit/dreamer/chatserver/mapper/RoomMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hit/dreamer/chatserver/mapper/RoomMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hit/dreamer/chatserver/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hit/dreamer/chatserver/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hit/dreamer/chatserver/mapper/UserMapper.xml" afterDir="false" />
-    </list>
+    <list default="true" id="36a5fde1-ee0e-4b17-9fc8-f08987248c62" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -174,7 +150,7 @@
       <workItem from="1701604948066" duration="127000" />
       <workItem from="1701605081731" duration="2895000" />
       <workItem from="1701676105923" duration="9015000" />
-      <workItem from="1701768455567" duration="7429000" />
+      <workItem from="1701768455567" duration="7533000" />
     </task>
     <servers />
   </component>
