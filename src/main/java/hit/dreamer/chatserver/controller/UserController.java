@@ -25,8 +25,8 @@ public class UserController {
 	 * 触发登录拦截器，测试前端登录
 	 * */
 	@GetMapping("/islogin")
-	public void isLogin(){
-	
+	public Result isLogin(){
+		return userService.isLogin();
 	}
 	/**
 	 * 发送手机验证码

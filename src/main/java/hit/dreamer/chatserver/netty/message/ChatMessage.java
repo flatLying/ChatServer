@@ -8,10 +8,10 @@ import java.util.Map;
 
 @Data
 public class ChatMessage {
-    private String _id;
-    private int indexId;
+    private Long _id;
+    private Long indexId;
     private String content;
-    private String senderId;
+    private Long senderId;
     private String username;
     private String avatar;
     private String date;
@@ -24,7 +24,8 @@ public class ChatMessage {
     private Boolean failure;
     private Boolean disableActions;
     private Boolean disableReactions;
-    private List<Map<String, Object>> files;
-    private Map<Object, List<String>> reactions;
-    private Map<String, Object> replyMessage;
+    private String files;
+    private String reactions;
+    private String replyMessage;
+    private String usersTag;
 }

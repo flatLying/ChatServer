@@ -6,22 +6,24 @@ import java.time.LocalDateTime;
 
 @Data
 public class HistoryMessage {
-	/**
-	 * 主键
-	 */
-	private Long id;
-	/**
-	 * 发送者id
-	 */
+	private Long _id;
+	private Long indexId;
+	private String content;
 	private Long senderId;
-	/**
-	 * 群聊id
-	 */
-	private Long roomId;
-	/**
-	 * 消息
-	 */
-	private String message;
+	private String username;
+	private String avatar;
+	private Boolean system;
+	private Boolean saved;
+	private Boolean distributed;
+	private Boolean seen;
+	private Boolean deleted;
+	private Boolean failure;
+	private Boolean disableActions;
+	private Boolean disableReactions;
+	private String files;
+	private String reactions;
+	private String replyMessage;
+	private String usersTag;
 	/**
 	 * 消息时间
 	 */
