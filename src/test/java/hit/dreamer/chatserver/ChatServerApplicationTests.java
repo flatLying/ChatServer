@@ -53,7 +53,7 @@ class ChatServerApplicationTests {
             String name="TestRoom_"+i;
             String avatar=i+".jpg";
             Room room=new Room();
-            room.setRoomName(name);
+            room.setName(name);
             room.setAvatar(avatar);
             room.setCreateTime(LocalDateTime.now());
             room.setUpdateTime(LocalDateTime.now());
@@ -61,10 +61,5 @@ class ChatServerApplicationTests {
         }
 
     }
-    @Test
-    void testHistoryMessageInsert(){
-        HistoryMessage historyMessage1=new HistoryMessage();
-//        historyMessage1.setRoomId(1L);
-        historyMessage1.setSenderId(1L);
-    }
+
 }

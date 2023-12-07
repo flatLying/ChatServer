@@ -1,4 +1,6 @@
 spring:
+  jackson:
+    default-property-inclusion: non_null
   data:
     redis:
       host: 124.71.32.241

@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class HistoryMessage {
 	public HistoryMessage(ChatMessage chatMessage){
-		this.set_id(chatMessage.get_id());
+		this.setId(chatMessage.get_id());
 		this.setIndexId(chatMessage.getIndexId());
 		this.setContent(chatMessage.getContent());
 		this.setSenderId(chatMessage.getSenderId());
@@ -34,7 +34,7 @@ public class HistoryMessage {
 		this.setRoomId(chatMessage.getRoomId());
 		this.setSendTime(TimeUtils.getLocalDateTimefromDateAndTimestamp(chatMessage.getDate(), chatMessage.getTimestamp()));
 	}
-	private Long _id;
+	private Long id;
 	private Long indexId;
 	private String content;
 	private Long senderId;

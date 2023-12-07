@@ -11,12 +11,12 @@
         delete from history_message where room_id=#{roomId}
     </delete>
     <select id="getHistoryMessageBySender" resultType="hit.dreamer.chatserver.pojo.HistoryMessage">
-        select _id,sender_id, room_id,reactions,replyMessage,content,username,avatar,files,send_time,index_id,usersTag from history_message where sender_id = #{senderId}
+        select id,sender_id, room_id,reactions,replyMessage,content,username,avatar,files,send_time,index_id,usersTag from history_message where sender_id = #{senderId}
     </select>
     <select id="getHistoryMessageByRoom" resultType="hit.dreamer.chatserver.pojo.HistoryMessage">
-        select _id,sender_id, room_id,reactions,replyMessage,content,username,avatar,files,send_time,index_id,usersTag from history_message where sender_id = #{roomId}
+        select id,sender_id, room_id,reactions,replyMessage,content,username,avatar,files,send_time,index_id,usersTag from history_message where room_id = #{roomId} ORDER BY send_time DESC LIMIT #{len}
     </select>
     <select id="getHistoryMessageById" resultType="hit.dreamer.chatserver.pojo.HistoryMessage">
-        select _id,sender_id, room_id,reactions,replyMessage,content,username,avatar,files,send_time,index_id,usersTag from history_message where _id = #{id}
+        select id,sender_id, room_id,reactions,replyMessage,content,username,avatar,files,send_time,index_id,usersTag from history_message where id = #{id}
     </select>
 </mapper>

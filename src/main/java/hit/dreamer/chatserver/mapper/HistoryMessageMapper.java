@@ -23,7 +23,7 @@ public interface HistoryMessageMapper {
 	/**
 	 * 根据群聊查询历史消息
 	 * */
-	public List<HistoryMessage> getHistoryMessageByRoom(Long roomId);
+	public List<HistoryMessage> getHistoryMessageByRoom(Long roomId,Long len);
 	/**
 	 * 根据id查询历史消息
 	 * */

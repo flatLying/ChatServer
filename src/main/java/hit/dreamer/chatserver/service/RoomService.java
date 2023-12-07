@@ -4,4 +4,6 @@ import hit.dreamer.chatserver.dto.Result;
 
 public interface RoomService {
 	public Result getRooms();
+	
+	Result getMessageByRoomId(Long roomId);
 }

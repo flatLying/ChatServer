@@ -1,5 +1,6 @@
 package hit.dreamer.chatserver.dto;
 
+import hit.dreamer.chatserver.netty.message.ChatMessage;
 import lombok.Data;
 
 import java.util.List;
@@ -9,8 +10,8 @@ public class RoomDTO {
 	private Long roomId;
 	private String roomName;
 	private String avatar;
-	private Integer unreadCount;
+	private Long unreadCount;
 	private  Integer index;
-//	private String lastMessage;
+	private ChatMessage lastMessage;
 	private List<SendUserDTO> users;
 }
