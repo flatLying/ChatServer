@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36a5fde1-ee0e-4b17-9fc8-f08987248c62" name="Changes" comment="" />
+    <list default="true" id="36a5fde1-ee0e-4b17-9fc8-f08987248c62" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/utils/TimeUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/dto/RoomDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/dto/RoomDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/dto/SendUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/dto/SendUserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/database/MySqlHistoryMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/database/MySqlHistoryMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/database/RedisOffLineMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/database/RedisOffLineMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/handler/FreshStatusHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/handler/FreshStatusHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/handler/MessageTransferHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/handler/MessageTransferHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/message/ChatMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/message/ChatMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/message/SendMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/pojo/HistoryMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/pojo/HistoryMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/service/impl/RoomServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/service/impl/RoomServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hit/dreamer/chatserver/mapper/HistoryMessageMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hit/dreamer/chatserver/mapper/HistoryMessageMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/hit/dreamer/chatserver/ChatServerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hit/dreamer/chatserver/ChatServerApplicationTests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,39 +58,44 @@
   <component name="MavenRunner">
     <option name="jreName" value="#JAVA_HOME" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2YfWA5QFD0zE6Uxq89DTs1ZoYa4" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/MyDataSpace/Tencent/QQ/1735175988/FileRecv/ChatServer&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;ec0dd8b6c992be8c9481f27186b8f0fa&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ToolWindowGit.ShowToolbar": "false",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/code/java/ChatServer/backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.project.statistic.project.settings",
+    "spring.configuration.checksum": "ec0dd8b6c992be8c9481f27186b8f0fa",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;redis&quot;,
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "redis",
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -116,6 +139,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.ChatServerApplicationTests.testGetUsersByRoomId" />
+      <item itemvalue="JUnit.ChatServerApplicationTests.testRabbitMQConnection" />
+      <item itemvalue="Spring Boot.ChatServerApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ChatServerApplicationTests.testGetUsersByRoomId" />
@@ -151,6 +179,7 @@
       <workItem from="1701605081731" duration="2895000" />
       <workItem from="1701676105923" duration="9015000" />
       <workItem from="1701768455567" duration="7533000" />
+      <workItem from="1701913501622" duration="6043000" />
     </task>
     <servers />
   </component>
@@ -158,25 +187,60 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
+    <option name="RECENT_FILTERS">
       <map>
-        <entry key="MAIN">
+        <entry key="User">
           <value>
-            <State />
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
     </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="user">
+                    <value>
+                      <list>
+                        <option value="*" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="完成rooms信息获取" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成rooms信息获取" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/hit/dreamer/chatserver/netty/handler/MessageTransferHandler.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="7" />
+          <line>78</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

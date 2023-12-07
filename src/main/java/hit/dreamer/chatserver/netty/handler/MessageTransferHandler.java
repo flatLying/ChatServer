@@ -2,10 +2,13 @@ package hit.dreamer.chatserver.netty.handler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import hit.dreamer.chatserver.mapper.UserMapper;
-import hit.dreamer.chatserver.netty.message.SendMessage;
+import hit.dreamer.chatserver.netty.message.ChatMessage;
+import hit.dreamer.chatserver.netty.message.MessageWithSenderReceiver;
+import hit.dreamer.chatserver.pojo.HistoryMessage;
 import hit.dreamer.chatserver.pojo.User;
 import hit.dreamer.chatserver.utils.ChannelHolder;
 import hit.dreamer.chatserver.utils.RedisConstants;
+import hit.dreamer.chatserver.utils.TimeUtils;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
@@ -24,7 +27,7 @@ import java.util.Map;
 
 @Slf4j
 @ChannelHandler.Sharable
-public class MessageTransferHandler extends SimpleChannelInboundHandler<SendMessage> {
+public class MessageTransferHandler extends SimpleChannelInboundHandler<ChatMessage> {
     private RabbitTemplate rabbitTemplate;
     private UserMapper userMapper;
     private StringRedisTemplate stringRedisTemplate;
@@ -37,8 +40,8 @@ public class MessageTransferHandler extends SimpleChannelInboundHandler<SendMess
     }
     @SneakyThrows
     @Override
-    protected void channelRead0(ChannelHandlerContext channelHandlerContext, SendMessage sendMessage){
-        Long roomId = sendMessage.getRoomId();
+    protected void channelRead0(ChannelHandlerContext channelHandlerContext, ChatMessage chatMessage){
+        Long roomId = chatMessage.getRoomId();
 
         //先找出发信人的id
         Object authorization = ChannelHolder.getChannelAttribute(channelHandlerContext.channel(), "authorization");
@@ -61,25 +64,21 @@ public class MessageTransferHandler extends SimpleChannelInboundHandler<SendMess
         }
 
         //放入历史消息队列，给所有在线的人发一份
-        sendMessage.setSendTime(LocalDateTime.now().toString());
-        sendMessage.setSenderId(senderId);
-
-        rabbitTemplate.convertAndSend("Message", "historyMessage", sendMessage);
+        rabbitTemplate.convertAndSend("Message", "historyMessage", chatMessage);
         for (User user : usersByRoomId){
             String auth = stringRedisTemplate.opsForValue().get(RedisConstants.LOGIN_USER_KEY + user.getId());
             if (auth == null || ChannelHolder.getChannelByUserAuth(auth) == null){
                 //这个用户不在线,则给离线消息发
                 Long userId = user.getId();
-                sendMessage.setReceiverId(userId);
-                rabbitTemplate.convertAndSend("Message", "offlineMessage", sendMessage);
+                MessageWithSenderReceiver messageWithSenderReceiver = new MessageWithSenderReceiver(chatMessage);
+                messageWithSenderReceiver.setReceiverId(userId);
+                rabbitTemplate.convertAndSend("Message", "offlineMessage", messageWithSenderReceiver);
             }else {
                 //用户在线，则找到channel发过去
                 Channel channelByUserAuth = ChannelHolder.getChannelByUserAuth(auth);
-                channelByUserAuth.writeAndFlush(objectMapper.writeValueAsString(sendMessage));
+                channelByUserAuth.writeAndFlush(objectMapper.writeValueAsString(chatMessage));
             }
         }
-//        log.debug("sender room id:{}", roomId);
-//        rabbitTemplate.convertAndSend("OffLineMessage", "offlineMessage", sendMessage);
-//        rabbitTemplate.convertAndSend("HistoryMessage", "historyMessage", sendMessage);
+
     }
 }

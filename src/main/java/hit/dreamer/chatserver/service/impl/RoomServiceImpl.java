@@ -68,8 +68,6 @@ public class RoomServiceImpl implements RoomService {
 			roomDTO.setUnreadCount(RandomUtil.randomInt(0,4));
 			roomDTOList.add(roomDTO);
 		});
-//		ObjectMapper objectMapper = new ObjectMapper();
-//		String roomDTOJson = objectMapper.writeValueAsString(roomDTOList);
 		return Result.ok(roomDTOList);
 	}
 }

@@ -8,8 +8,8 @@ import cn.hutool.json.JSONUtil;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import hit.dreamer.chatserver.netty.message.ChatMessage;
-import hit.dreamer.chatserver.netty.message.SendMessage;
 import hit.dreamer.chatserver.utils.ChannelHolder;
+import hit.dreamer.chatserver.utils.MessageTypeUtils;
 import hit.dreamer.chatserver.utils.RedisConstants;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
@@ -31,6 +31,7 @@ import java.util.concurrent.TimeUnit;
 @ChannelHandler.Sharable
 public class FreshStatusHandler extends SimpleChannelInboundHandler<TextWebSocketFrame> {
     private StringRedisTemplate stringRedisTemplate;
+    private ObjectMapper objectMapper = new ObjectMapper();
 
     public FreshStatusHandler(StringRedisTemplate stringRedisTemplate) {
         this.stringRedisTemplate = stringRedisTemplate;
@@ -40,13 +41,17 @@ public class FreshStatusHandler extends SimpleChannelInboundHandler<TextWebSocke
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, TextWebSocketFrame textWebSocketFrame) throws Exception {
         String authorization = (String) ChannelHolder.getChannelAttribute(channelHandlerContext.channel(), "authorization");
         //在redis中刷新有效期
-        log.debug("刷新有效期");
+//        log.debug("刷新有效期");
+        Map<Object, Object> entries = stringRedisTemplate.opsForHash().entries(RedisConstants.LOGIN_USER_KEY + authorization);
         String userId = stringRedisTemplate.opsForHash().get(RedisConstants.LOGIN_USER_KEY + authorization, "id").toString();
         stringRedisTemplate.expire(RedisConstants.LOGIN_USER_KEY + authorization, RedisConstants.LOGIN_USER_TTL, TimeUnit.SECONDS);
         stringRedisTemplate.expire(RedisConstants.LOGIN_USER_KEY + userId, RedisConstants.LOGIN_USER_TTL, TimeUnit.SECONDS);
 
-        ObjectMapper objectMapper = new ObjectMapper();
-        SendMessage sendMessage = objectMapper.readValue(textWebSocketFrame.text(), SendMessage.class);
-        channelHandlerContext.fireChannelRead(sendMessage);
+        ChatMessage chatMessage = MessageTypeUtils.TextWebSocketFrame2ChatMessage(textWebSocketFrame);
+        chatMessage.setSenderId(Long.valueOf(userId));
+        chatMessage.setUsername((String) entries.get("nickName"));
+        chatMessage.setAvatar((String) entries.get("avatar"));
+
+        channelHandlerContext.fireChannelRead(chatMessage);
     }
 }

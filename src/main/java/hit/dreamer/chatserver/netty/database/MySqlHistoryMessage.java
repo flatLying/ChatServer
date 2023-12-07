@@ -3,7 +3,7 @@ package hit.dreamer.chatserver.netty.database;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import hit.dreamer.chatserver.mapper.HistoryMessageMapper;
-import hit.dreamer.chatserver.netty.message.SendMessage;
+import hit.dreamer.chatserver.netty.message.ChatMessage;
 import hit.dreamer.chatserver.pojo.HistoryMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.ExchangeTypes;
@@ -30,16 +30,9 @@ public class MySqlHistoryMessage {
             exchange = @Exchange(name = "Message", type = ExchangeTypes.DIRECT),
             key = {"historyMessage"}
     ))
-    public void saveHistoryMessage(SendMessage message) throws JsonProcessingException {
-        log.debug("历史消息收到啦。。。。。。");
-        Long senderId = message.getSenderId();
-        Long roomId = message.getRoomId();
-        HistoryMessage historyMessage = new HistoryMessage();
-        historyMessage.setRoomId(roomId);
-        historyMessage.setSenderId(senderId);
-        historyMessage.setMessage(objectMapper.writeValueAsString(message));
-
+    public void saveHistoryMessage(ChatMessage chatMessage) throws JsonProcessingException {
+        HistoryMessage historyMessage = new HistoryMessage(chatMessage);
         historyMessageMapper.insert(historyMessage);
-        log.debug("mysql 历史消息：{}", historyMessage.toString());
+        log.debug("历史消息:{}", historyMessage.toString());
     }
 }

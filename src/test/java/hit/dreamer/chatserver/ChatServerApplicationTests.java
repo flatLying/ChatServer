@@ -64,7 +64,7 @@ class ChatServerApplicationTests {
     @Test
     void testHistoryMessageInsert(){
         HistoryMessage historyMessage1=new HistoryMessage();
-        historyMessage1.setRoomId(1L);
+//        historyMessage1.setRoomId(1L);
         historyMessage1.setSenderId(1L);
     }
 }

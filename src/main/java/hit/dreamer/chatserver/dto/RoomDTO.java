@@ -1,6 +1,5 @@
 package hit.dreamer.chatserver.dto;
 
-import hit.dreamer.chatserver.netty.message.SendMessage;
 import lombok.Data;
 
 import java.util.List;

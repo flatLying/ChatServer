@@ -1,6 +1,7 @@
 package hit.dreamer.chatserver.dto;
 
 import cn.hutool.core.date.DateUtil;
+import hit.dreamer.chatserver.utils.TimeUtils;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -22,16 +23,11 @@ public class SendUserDTO {
 	}
 	public void setStatus(boolean isLogin,LocalDateTime updateTime){
 		String state = isLogin ? "online" : "offline";
-		int hour = updateTime.getHour();
-		int minute = updateTime.getMinute();
-		int dayOfMonth = updateTime.getDayOfMonth();
-		Month month = updateTime.getMonth();
 		ZoneId zoneId = ZoneId.systemDefault();
 		Date today= Date.from(LocalDateTime.now().atZone(zoneId).toInstant());
 		Date lastLogin=Date.from(updateTime.atZone(zoneId).toInstant());
-		String date= DateUtil.betweenDay(today,lastLogin,false)==0?"today":dayOfMonth+month.getDisplayName(
-				java.time.format.TextStyle.FULL,Locale.CHINA);
+		String date= DateUtil.betweenDay(today,lastLogin,false)==0?"today":TimeUtils.getTimestampfromLocalDateTime(updateTime);
 		this.status.setState(state);
-		this.status.setLastChanged(date+", "+hour+":"+minute);
+		this.status.setLastChanged(date+", "+ TimeUtils.getDatefromLocalDateTime(updateTime));
 	}
 }
